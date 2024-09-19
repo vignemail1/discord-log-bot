@@ -1,0 +1,10 @@
+services:
+  discord-log-vocal:
+    build: .
+    image: discord-log-vocal:latest
+    container_name: discord-log-vocal
+    env_file:
+      - .env
+    volumes:
+      - ./bot_log.txt:/app/bot_log.txt  # Pour enregistrer les logs dans un fichier sur la machine hôte
+    restart: unless-stopped
